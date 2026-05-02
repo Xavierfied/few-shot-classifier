@@ -1,0 +1,9 @@
+.venv/
+.vscode/
+*/__pycache__/*
+*.jpg
+*.jpeg
+.idea/
+support_images/
+room_classification_docs.md
+*.json
