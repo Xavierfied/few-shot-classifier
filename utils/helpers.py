@@ -13,18 +13,32 @@ def create_runner(model:str, args):
         from resnet_fewshot.infer import RoomClassifier
         return RoomClassifier(embeddings_path=args.embeddings)
     
+
     elif model == "clip_zeroshot":
-        pass
+        from clip_model.clip_zeroshot import CLIPNoShotClassifier
+        
+        classifier = CLIPNoShotClassifier(args.labels)
+        return classifier
+        
+
 
     elif model == "clip_fewshot":
-        pass
+        from clip_model.clip_fewshot import CLIPFewShotClassifier
+
+        classifier = CLIPFewShotClassifier()
+        support_path = args.embeddings
+        if support_path == "embeddings/support.pt":
+            support_path = "embeddings/clip_support.pt"
+
+        classifier.load_support(support_path)
+        return classifier
 
     else:
         raise ValueError(f"Unknown model: {model}")
     
 
 ###########################################################################
-def save_results(label:str, scores: dict, source: str, output_dir: str):
+def save_results(label:str, scores: dict, source: str, output_dir: str, model: str = None):
     os.makedirs(output_dir, exist_ok=True)
 
     # Keep highest-confidence class at the top in saved output.
@@ -38,7 +52,12 @@ def save_results(label:str, scores: dict, source: str, output_dir: str):
     }
 
     stem = Path(source).stem
-    out_path = Path(output_dir) / f"{stem}_result.json"
+    if model:
+        fname = f"{stem}_{model}_result.json"
+    else:
+        fname = f"{stem}_result.json"
+
+    out_path = Path(output_dir) / fname
 
     with open(out_path, "w") as f:
         json.dump(result, f, indent=2)
