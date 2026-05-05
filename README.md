@@ -75,3 +75,6 @@ Notes
 -----
 - CLIP zero-shot uses text-label prompts (no support images required).
 - Passing a single label can produce a scalar score; the code handles that case.
+
+Download Support Images from this link and place them in the exact order under the "support_images" directory:
+https://drive.google.com/drive/folders/1rbY05BeJ3qCotlLO1BhygrV298CMMy7D?usp=sharing
