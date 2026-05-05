@@ -1,0 +1,31 @@
+{
+  "source": "kit1.jpg",
+  "timestamp": "2026-05-03 22:05:51",
+  "results": {
+    "resnet_cosine": {
+      "predicted": "kitchen",
+      "scores": {
+        "kitchen": 0.8353484272956848,
+        "bedroom": 0.6478984355926514,
+        "bathroom": 0.6065924763679504
+      }
+    },
+    "clip_zeroshot": {
+      "predicted": "A Modren kitchen",
+      "scores": {
+        "A Modren kitchen": 0.30078125,
+        "bathroom": 0.20751953125,
+        "bedroom": 0.200927734375,
+        "living room": 0.19677734375
+      }
+    },
+    "clip_fewshot": {
+      "predicted": "kitchen",
+      "scores": {
+        "kitchen": 0.92578125,
+        "bathroom": 0.82666015625,
+        "bedroom": 0.7822265625
+      }
+    }
+  }
+}

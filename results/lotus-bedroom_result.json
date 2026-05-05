@@ -1,0 +1,10 @@
+{
+  "source": "lotus-bedroom.jpg",
+  "predicted": "bedroom",
+  "scores": {
+    "bedroom": 0.7271239757537842,
+    "kitchen": 0.5711624622344971,
+    "bathroom": 0.4615935981273651
+  },
+  "timestamp": "2026-05-03 01:06:53"
+}

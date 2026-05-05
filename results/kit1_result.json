@@ -1,0 +1,8 @@
+{
+  "source": "kit1.jpg",
+  "predicted": "a photo of a kitchen with dark grey cabinets and a white rug",
+  "scores": {
+    "a photo of a kitchen with dark grey cabinets and a white rug": 0.314453125
+  },
+  "timestamp": "2026-05-03 20:25:09"
+}
